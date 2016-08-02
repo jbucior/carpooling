@@ -1,0 +1,52 @@
+<div class="bg-light lter b-b wrapper-md text-center">
+    <div class="row">
+        <div class="col-sm-12 col-xs-12">
+            <h1 class="m-n font-thin h1 text-black">Znajdź przejazd</h1>
+        </div>
+    </div>
+</div>
+<div class="wrapper-md text-center">
+    <form class="form-inline" role="form" ng-submit="ctrl.submit(ctrl.ride)">
+        <div class="col-md-4">
+            <input type="text" options = "{types: ['(cities)']}" class="form-control input-lg" placeholder="Skąd" aria-describedby="basic-addon2" g-places-autocomplete ng-model="ctrl.ride.cityFrom">
+        </div>
+        <div class="col-md-4">
+            <input type="text" options = "{types: ['(cities)']}" class="form-control input-lg" id="exampleInputPassword2" placeholder="Dokąd" g-places-autocomplete ng-model="ctrl.ride.cityTo">
+        </div>
+        <div class="col-md-2">
+            <div class="form-group">
+                <div class='input-group date'>
+                    <input class="form-control input-lg" ng-model="ctrl.ride.rideDate" datetime-picker date-format="yyyy-MM-dd HH:mm:ss" id='datetimepicker1'/>
+                    <span class="input-group-addon">
+                        <label for="datetimepicker1">
+                            <span class="glyphicon glyphicon-calendar"></span>
+                        </label>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <button class="btn btn-success  btn-lg ">Szukaj</button>
+        </div>
+    </form>
+</div>
+<br/><br/>
+    <ul>
+        <ul class="text-center col-lg-11">
+            <li ng-repeat="ride in ctrl.rides" class="list-group-item">
+                <a href="#" class="h4 text-primary m-b-sm m-t-sm block">{{ride.cityFrom}} - {{ride.cityTo}} : <mydate>{{ride.rideDate | date:'dd-MM-yyyy HH:mm'}}</mydate></a>
+                    <tr>
+                        <td>
+                            <p>{{ride.driverName}} {{ride.driverSurname}}</p>
+                        </td>
+                        <td>
+                            <a class="btn m-b-xs w-xs btn-info btn-rounded">{{ride.price}} $</a>
+                            <button class="btn m-b-xs w-xs btn-success btn-rounded">Szczegóły</button>
+                        </td>
+                    </tr>
+            </li>
+        </ul>
+        <!--<li ng-repeat="ride in ctrl.rides">{{$index}}: {{ride}}</li>-->
+
+    </ul>
+</div>

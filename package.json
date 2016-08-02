@@ -1,0 +1,25 @@
+{
+  "name": "carazem",
+  "version": "1.0.0",
+  "description": "carpooling carazem app",
+  "engines": {
+    "node": "4.1.1"
+  },
+  "scripts": {
+    "postinstall": "webpack",
+    "build": "webpack",
+    "watch": "webpack --watch"
+  },
+  "dependencies": {
+    "angular": "^1.5.7",
+    "angular-animate": "^1.5.8",
+    "angular-resource": "^1.5.7",
+    "angular-ui-router": "^0.3.1",
+    "angularfire": "^2.0.1",
+    "angularjs-datetime-picker": "^0.1.16",
+    "angularjs-toaster": "^2.0.0",
+    "express": "^4.14.0",
+    "firebase": "^3.2.1",
+    "webpack": "^1.13.1"
+  }
+}

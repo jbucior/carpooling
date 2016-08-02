@@ -1,0 +1,75 @@
+<div class="bg-light lter b-b wrapper-md text-center">
+    <div class="row">
+        <div class="col-sm-12 col-xs-12">
+            <h1 class="m-n font-thin h1 text-black">Dodaj przejazd</h1>
+        </div>
+    </div>
+</div>
+<div class="wrapper-md text-center">
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <form class="form-horizontal" role="form" method="post" ng-submit="ctrl.addRide()">
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="input-id-1">Data i godzina wyjazdu:</label>
+                    <div class="col-sm-10">
+                        <div class='input-group date'>
+                            <input class="form-control input-lg" ng-model="ctrl.rideDate" datetime-picker date-format="yyyy-MM-dd HH:mm:ss" id='datetimepicker1'/>
+                            <span class="input-group-addon">
+                            <label for="datetimepicker1">
+                            <span class="glyphicon glyphicon-calendar"></span>
+                            </label>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="input-id-1">Początek:</label>
+                    <div class="col-sm-10">
+                        <input type="text" options="{types: ['(cities)']}" class="form-control input-lg" id="input-id-1"
+                               placeholder="Podaj początek trasy..." aria-describedby="basic-addon2"
+                               g-places-autocomplete ng-model="ctrl.placeFrom">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="input-id-1">Koniec:</label>
+                    <div class="col-sm-10">
+                        <input type="text" options="{types: ['(cities)']}" class="form-control input-lg" id="input-id-2"
+                               placeholder="Podaj koniec trasy..." aria-describedby="basic-addon2" g-places-autocomplete
+                               ng-model="ctrl.placeTo">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="input-id-1">Dodatkowe informacje:</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control input-lg" id="input-id-3"
+                               placeholder="Wpisz dodatkowe informacje na temat przejazdu..."
+                               ng-model="ctrl.ride.description">
+                    </div>
+                </div>
+                <div class="form-group bootstrap-touchspin">
+                    <label class="col-sm-2 control-label" for="input-id-1">Ilość wolnych miejsc:</label>
+                    <div class="col-sm-2">
+                        <input type="number" class="form-control input-lg" value="1" data-verticalbuttons="true"
+                               data-verticalupclass="fa fa-caret-up" data-verticaldownclass="fa fa-caret-down"
+                               ng-model="ctrl.ride.seats">
+                    </div>
+                </div>
+                <div class="form-group bootstrap-touchspin">
+                    <label class="col-sm-2 control-label" for="input-id-1">Cena przejazdu dla 1&nbsposoby:</label>
+                    <div class="col-sm-2">
+                        <!--<div class="input-group">-->
+                            <input type="text" class="form-control input-lg" value="1.00" data-verticalbuttons="true"
+                                   data-verticalupclass="fa fa-caret-up" data-verticaldownclass="fa fa-caret-down"
+                                   ng-model="ctrl.ride.price">
+                            <span class="input-group-addon">zł</span>
+                        <!--</div>-->
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary btn-addon btn-lg"><i class="fa fa-plus"></i>Dodaj przejazd
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
