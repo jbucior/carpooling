@@ -21,7 +21,7 @@ angular.injector(['ng']).get("$http").get("/config").then(function (res) {
         'CarazemApp.login'
     ])
         .config(require("./config"))
-        .constant('BASE_URL', res.data.backend || 'https://carazem-api.herokuapp.com')
+        .constant('BASE_URL', res.data.backend || 'https://carazem2-api.herokuapp.com')
         .constant('AUTH', {})
         .config(function($httpProvider, AUTH) {
             $httpProvider.defaults.headers.post  = AUTH;
@@ -29,10 +29,10 @@ angular.injector(['ng']).get("$http").get("/config").then(function (res) {
 
     angular.element(document).ready(function ($firebaseObject) {
         var config = {
-            apiKey: "AIzaSyCorw6g_hLYbOW6Jg3xxM34l4x9sFwK8EQ",
-            authDomain: "carazem-36e8d.firebaseapp.com",
-            databaseURL: "https://carazem-36e8d.firebaseio.com",
-            storageBucket: "carazem-36e8d.appspot.com"
+            apiKey: "AIzaSyC8Zdc-j8nKLNSfH4_BORz76VsO0RYv46M",
+            authDomain: "carazem2.firebaseapp.com",
+            databaseURL: "https://carazem2.firebaseio.com",
+            storageBucket: "carazem2.appspot.com",
         };
         firebase.initializeApp(config);
         angular.bootstrap(document, ['CarazemApp']);
