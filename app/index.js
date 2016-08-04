@@ -8,7 +8,6 @@ require("angularfire");
 require("angularjs-datetime-picker");
 require("./modules/search-ride/search-ride.index");
 require("./modules/add-ride/add-ride.index");
-require("./modules/login/login.index");
 angular.injector(['ng']).get("$http").get("/config").then(function (res) {
     angular.module("CarazemApp", [
         'ngResource',
@@ -17,15 +16,10 @@ angular.injector(['ng']).get("$http").get("/config").then(function (res) {
         'ngAnimate',
         'firebase',
         'CarazemApp.searchride',
-        'CarazemApp.addride',
-        'CarazemApp.login'
+        'CarazemApp.addride'
     ])
         .config(require("./config"))
         .constant('BASE_URL', res.data.backend || 'https://carazem2-api.herokuapp.com')
-        .constant('AUTH', {})
-        .config(function($httpProvider, AUTH) {
-            $httpProvider.defaults.headers.post  = AUTH;
-        });
 
     angular.element(document).ready(function ($firebaseObject) {
         var config = {

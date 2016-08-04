@@ -10,12 +10,12 @@ module.exports = function (Ride, $state, toaster, $scope) {
     this.addRide = function() {
         this.ride.cityFrom = getCity(this.placeFrom);
         this.ride.cityTo = getCity(this.placeTo);
-        this.ride.rideDate = Date.parse(this.rideDate);
+        this.ride.rideDate = Date.parse(this.rideDate).toString();
         console.log(this.ride);
-        Ride.save({}, this.ride, function () {
+        Ride.save({}, this.ride.toJson(), function () {
             toaster.pop('success', "Sukces!", "Dodano przejazd!");
         }, function () {
-            toaster.pop('error', "Błąd!", "Wystąpił błąd serwisu!");
+            toaster.pop('error', "Błąd!", "Wystąpił fakajp serwisu!");
         });
     }
 };

@@ -1,4 +1,4 @@
-module.exports = angular.module("CarazemApp.addride",['google.places', 'angularjs-datetime-picker', 'CarazemApp.login'])
+module.exports = angular.module("CarazemApp.addride",['google.places', 'angularjs-datetime-picker'])
     .config(function ($stateProvider) {
         $stateProvider
             .state("addride", {

@@ -7,3 +7,4 @@ module.exports = function ($resource, BASE_URL) {
     stripTrailingSlashes: false
   });
 };
+
