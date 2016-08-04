@@ -12,7 +12,7 @@ module.exports = function (Ride, $state, toaster, $scope) {
         this.ride.cityTo = getCity(this.placeTo);
         this.ride.rideDate = Date.parse(this.rideDate).toString();
         console.log(this.ride);
-        Ride.save({}, this.ride.toJson(), function () {
+        Ride.save({}, JSON.stringify(this.ride), function () {
             toaster.pop('success', "Sukces!", "Dodano przejazd!");
         }, function () {
             toaster.pop('error', "Błąd!", "Wystąpił fakajp serwisu!");
