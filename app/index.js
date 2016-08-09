@@ -22,10 +22,10 @@ angular.injector(['ng']).get("$http").get("/config").then(function (res) {
     ])
         .config(require("./config"))
         .constant('BASE_URL', res.data.backend || 'https://carazem2-api.herokuapp.com')
-        .constant('AUTH', {})
-        .config(function($httpProvider, AUTH) {
-            $httpProvider.defaults.headers.post  = AUTH;
-        });
+        // .constant('AUTH', {})
+        // .config(function($httpProvider, AUTH) {
+        //     $httpProvider.defaults.headers.post  = AUTH;
+        // });
 
     angular.element(document).ready(function ($firebaseObject) {
         var config = {
