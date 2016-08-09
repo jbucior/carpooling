@@ -12,6 +12,20 @@
             <div class="text-danger wrapper text-center" ng-show="authError">
 
             </div>
+
+            <div class="list-group list-group-sm">
+                <div class="list-group-item">
+                    <input type="email" placeholder="Email" class="form-control no-border" ng-model="user.email" required>
+                </div>
+                <div class="list-group-item">
+                    <input type="password" placeholder="Password" class="form-control no-border" ng-model="user.password" required>
+                </div>
+            </div>
+            <div class="checkbox m-b-md m-t-none">
+                <label class="i-checks">
+                    <input type="checkbox" ng-model="agree" required><i></i>Zapamiętaj mnie</a>
+                </label>
+            </div>
             <button type="submit" class="btn btn-lg btn-primary btn-block" ng-click="signup()" >Zaloguj się</button>
         </form>
     </div>
